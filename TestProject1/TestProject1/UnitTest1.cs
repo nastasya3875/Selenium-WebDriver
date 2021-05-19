@@ -111,10 +111,10 @@ namespace TestProject1
             product.Click();
 
             IWebElement productId = driver.FindElement(By.XPath("//input[@id='ProductId']"));       
-            Assert.IsFalse(productId.Text.Contains("89"));
+            Assert.IsTrue(productId.Text.Contains("89"));
 
             IWebElement productname = driver.FindElement(By.XPath("//input[@id='ProductName']"));
-            Assert.IsFalse(productname.Text.Contains("Chai"));
+            Assert.IsTrue(productname.Text.Contains("Chai"));
 
             IWebElement category = driver.FindElement(By.XPath("//select[@id='CategoryId']"));
             Assert.IsTrue(category.Text.Contains("Beverages"));
@@ -123,19 +123,19 @@ namespace TestProject1
             Assert.IsTrue(supplier.Text.Contains("Exotic Liquids"));
             
             IWebElement unitprice = driver.FindElement(By.XPath("//input[@id='UnitPrice']"));
-            Assert.IsFalse(unitprice.Text.Contains("50,0000"));
+            Assert.IsTrue(unitprice.Text.Contains("50,0000"));
          
             IWebElement quantity = driver.FindElement(By.XPath("//input[@id='QuantityPerUnit']"));
-            Assert.IsFalse(quantity.Text.Contains("36"));
+            Assert.IsTrue(quantity.Text.Contains("36"));
 
             IWebElement unitsinstock = driver.FindElement(By.XPath("//input[@id='UnitsInStock']"));
-            Assert.IsFalse(unitsinstock.Text.Contains("1"));
+            Assert.IsTrue(unitsinstock.Text.Contains("1"));
 
             IWebElement unitsonorder = driver.FindElement(By.XPath("//input[@id='UnitsOnOrder']"));
-            Assert.IsFalse(unitsonorder.Text.Contains("1"));
+            Assert.IsTrue(unitsonorder.Text.Contains("1"));
             
             IWebElement reorderlevel = driver.FindElement(By.XPath("//input[@id='ReorderLevel']"));
-            Assert.IsFalse(reorderlevel.Text.Contains("1"));
+            Assert.IsTrue(reorderlevel.Text.Contains("1"));
 
             // не могу проверить флажок
            // IWebElement discontinued = driver.FindElement(By.XPath("//input[@id='Discontinued']"));
