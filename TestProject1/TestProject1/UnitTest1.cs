@@ -122,8 +122,8 @@ namespace TestProject1
             IWebElement reorderlevel = driver.FindElement(By.XPath("//input[@id='ReorderLevel']"));
             Assert.AreEqual("1", reorderlevel.GetAttribute("value"));
 
-            // не могу понять, как можно проверить флажок
-            // IWebElement discontinued = driver.FindElement(By.XPath("//input[@id='Discontinued']"));
+            IWebElement discontinued = driver.FindElement(By.XPath("//input[@id='Discontinued']"));
+            Assert.AreEqual("true", discontinued.GetAttribute("value"));
              
         }
 
