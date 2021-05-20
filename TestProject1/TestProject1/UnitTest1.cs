@@ -18,8 +18,7 @@ namespace TestProject1
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        [Test]
-        public void Test1()
+        public void login()
         {
             IWebElement queryStr1 = driver.FindElement(By.XPath("//input[@id='Name']"));
             queryStr1.SendKeys("user");
@@ -29,29 +28,22 @@ namespace TestProject1
 
             IWebElement submitBtn = driver.FindElement(By.XPath("//input[@class='btn btn-default']"));
             submitBtn.Click();
+        }
+
+        [Test]
+        public void Test1()
+        {
+            login();
 
             IWebElement nazvanie = driver.FindElement(By.XPath("//h2[text()='Home page']"));
             Assert.AreEqual("Home page", nazvanie.Text);
-
         }
 
         [Test]
         public void Test2()
         {
-            IWebElement queryStr1 = driver.FindElement(By.XPath("//input[@id='Name']"));
-            queryStr1.SendKeys("user");
+            login();
 
-            IWebElement queryStr2 = driver.FindElement(By.XPath("//input[@id='Password']"));
-            queryStr2.SendKeys("user");
-
-            IWebElement submitBtn = driver.FindElement(By.XPath("//input[@class='btn btn-default']"));
-            submitBtn.Click();
-
-            IWebElement nazvanie = driver.FindElement(By.XPath("//h2[text()='Home page']"));
-            Assert.AreEqual("Home page", nazvanie.Text);
-
-            //d //
-            
             IWebElement allproducts = driver.FindElement(By.XPath("//ul[@class='nav navbar-nav']/li[2]"));
             allproducts.Click();
 
@@ -95,26 +87,19 @@ namespace TestProject1
         [Test]
         public void Test3()
         {
-            IWebElement queryStr1 = driver.FindElement(By.XPath("//input[@id='Name']"));
-            queryStr1.SendKeys("user");
-
-            IWebElement queryStr2 = driver.FindElement(By.XPath("//input[@id='Password']"));
-            queryStr2.SendKeys("user");
-
-            IWebElement submitBtn = driver.FindElement(By.XPath("//input[@class='btn btn-default']"));
-            submitBtn.Click();
+            login();
 
             IWebElement allproducts = driver.FindElement(By.XPath("//ul[@class='nav navbar-nav']/li[2]"));
             allproducts.Click();
 
-            IWebElement product = driver.FindElement(By.XPath("//a[@href='/Product/Edit?ProductId=89']"));
+            IWebElement product = driver.FindElement(By.XPath("//a[@href='/Product/Edit?ProductId=90']"));
             product.Click();
 
             IWebElement productId = driver.FindElement(By.XPath("//input[@id='ProductId']"));       
-            Assert.IsTrue(productId.Text.Contains("89"));
+            Assert.AreEqual("90", productId.GetAttribute("value"));
 
             IWebElement productname = driver.FindElement(By.XPath("//input[@id='ProductName']"));
-            Assert.IsTrue(productname.Text.Contains("Chai"));
+            Assert.AreEqual("Chai", productname.GetAttribute("value"));
 
             IWebElement category = driver.FindElement(By.XPath("//select[@id='CategoryId']"));
             Assert.IsTrue(category.Text.Contains("Beverages"));
@@ -123,57 +108,41 @@ namespace TestProject1
             Assert.IsTrue(supplier.Text.Contains("Exotic Liquids"));
             
             IWebElement unitprice = driver.FindElement(By.XPath("//input[@id='UnitPrice']"));
-            Assert.IsTrue(unitprice.Text.Contains("50,0000"));
+            Assert.AreEqual("50,0000", unitprice.GetAttribute("value"));
          
             IWebElement quantity = driver.FindElement(By.XPath("//input[@id='QuantityPerUnit']"));
-            Assert.IsTrue(quantity.Text.Contains("36"));
+            Assert.AreEqual("36", quantity.GetAttribute("value"));
 
             IWebElement unitsinstock = driver.FindElement(By.XPath("//input[@id='UnitsInStock']"));
-            Assert.IsTrue(unitsinstock.Text.Contains("1"));
+            Assert.AreEqual("1", unitsinstock.GetAttribute("value"));
 
             IWebElement unitsonorder = driver.FindElement(By.XPath("//input[@id='UnitsOnOrder']"));
-            Assert.IsTrue(unitsonorder.Text.Contains("1"));
-            
-            IWebElement reorderlevel = driver.FindElement(By.XPath("//input[@id='ReorderLevel']"));
-            Assert.IsTrue(reorderlevel.Text.Contains("1"));
+            Assert.AreEqual("1", unitsonorder.GetAttribute("value"));
 
-            // не могу проверить флажок
-           // IWebElement discontinued = driver.FindElement(By.XPath("//input[@id='Discontinued']"));
-           // Assert. 
+            IWebElement reorderlevel = driver.FindElement(By.XPath("//input[@id='ReorderLevel']"));
+            Assert.AreEqual("1", reorderlevel.GetAttribute("value"));
+
+            // не могу понять, как можно проверить флажок
+            // IWebElement discontinued = driver.FindElement(By.XPath("//input[@id='Discontinued']"));
+             
         }
 
         [Test]
         public void Test4()
         {
-            IWebElement queryStr1 = driver.FindElement(By.XPath("//input[@id='Name']"));
-            queryStr1.SendKeys("user");
-
-            IWebElement queryStr2 = driver.FindElement(By.XPath("//input[@id='Password']"));
-            queryStr2.SendKeys("user");
-
-            IWebElement submitBtn = driver.FindElement(By.XPath("//input[@class='btn btn-default']"));
-            submitBtn.Click();
+            login();
 
             IWebElement allproducts = driver.FindElement(By.XPath("//ul[@class='nav navbar-nav']/li[2]"));
             allproducts.Click();
 
-            IWebElement remove = driver.FindElement(By.XPath("//a[@href='/Product/Remove?ProductId=88']"));
+            IWebElement remove = driver.FindElement(By.XPath("//a[@href='/Product/Remove?ProductId=90']"));
             remove.Click(); 
         }
 
         [Test]
         public void Test5()
         {
-            IWebElement queryStr1 = driver.FindElement(By.XPath("//input[@id='Name']"));
-            queryStr1.SendKeys("user");
-
-            IWebElement queryStr2 = driver.FindElement(By.XPath("//input[@id='Password']"));
-            queryStr2.SendKeys("user");
-
-            IWebElement submitBtn = driver.FindElement(By.XPath("//input[@class='btn btn-default']"));
-            submitBtn.Click();
-
-            //g//
+            login();
 
             IWebElement logout = driver.FindElement(By.XPath("//a[@href='/Account/Logout']"));
             logout.Click();
@@ -186,8 +155,9 @@ namespace TestProject1
         }
 
         [TearDown]
-        public void TearDown() {
+        public void TearDown() 
+        {
            driver.Quit();
-       }
+        }
     }
 }
