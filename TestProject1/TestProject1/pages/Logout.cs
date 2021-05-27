@@ -33,9 +33,10 @@ namespace TestProject1.pages
         private IWebElement passwordtext;
 
 
-        public HomePage LoginVvod(User user) {
-            name.SendKeys(user.nameUs);
-            password.SendKeys(user.passwordUs);
+        public HomePage LoginVvod()
+        {
+            name.SendKeys("user");
+            password.SendKeys("user");
             submitBtn.Click();
             return new HomePage(driver);
         }
