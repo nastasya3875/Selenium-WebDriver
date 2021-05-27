@@ -11,6 +11,7 @@ namespace TestProject1
      class Tests : AbstractPage
     {
         private User user = new User("user", "user");
+        private Product product = new Product("Chai", "Beverages", "Exotic Liquids", "50", "36", "1", "1", "1", "Discontinued");
 
         [SetUp]
         public void Setup()
@@ -36,10 +37,9 @@ namespace TestProject1
             HomePage homePage = logout.LoginVvod(user);
             Products products = homePage.goProducts();
             Create create = products.goCreate();
-            Products products1 = create.goProducts();
+            Create create1 = create.goProducts(product);
             Products products2 = products.Check2();
         }
-
 
         [Test]
         public void Test3()
@@ -50,7 +50,6 @@ namespace TestProject1
             Create create = products.goEditProduct();
             Products products1 = create.Check3();
         }
-
 
         [Test]
         public void Test4()

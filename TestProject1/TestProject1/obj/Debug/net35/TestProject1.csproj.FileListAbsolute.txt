@@ -13,3 +13,4 @@ C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\T
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.csproj.CopyComplete
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.dll
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.pdb
+C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.csprojAssemblyReference.cache

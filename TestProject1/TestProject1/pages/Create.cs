@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TestProject1.dto;
 
 namespace TestProject1.pages
 {
@@ -53,19 +54,19 @@ namespace TestProject1.pages
         IWebElement createnew;
 
 
-        public Products goProducts()
+        public Create goProducts(Product product)
         {
-            productname.SendKeys("Chai");
-            category.SendKeys("Beverages");
-            supplier.SendKeys("Exotic Liquids");
-            unitprice.SendKeys("50");
-            quantity.SendKeys("36");
-            unitsinstock.SendKeys("1");
-            unitsonorder.SendKeys("1");
-            reorderlevel.SendKeys("1");
+            productname.SendKeys(product.Productname);
+            category.SendKeys(product.Category);
+            supplier.SendKeys(product.Supplier);
+            unitprice.SendKeys(product.UnitPrice);
+            quantity.SendKeys(product.QuantityPerUnit);
+            unitsinstock.SendKeys(product.UnitsInStock);
+            unitsonorder.SendKeys(product.UnitsOnOrder);
+            reorderlevel.SendKeys(product.ReorderLevel);
             discontinued.Click();
             send.Click();
-            return new Products(driver);
+            return new Create(driver);
         }
 
         public Products Check3()
