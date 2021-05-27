@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TestProject1.dto;
 
 namespace TestProject1.pages
 {
@@ -32,9 +33,9 @@ namespace TestProject1.pages
         private IWebElement passwordtext;
 
 
-        public HomePage LoginVvod() {
-            name.SendKeys("user");
-            password.SendKeys("user");
+        public HomePage LoginVvod(User user) {
+            name.SendKeys(user.nameUs);
+            password.SendKeys(user.passwordUs);
             submitBtn.Click();
             return new HomePage(driver);
         }

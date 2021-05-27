@@ -7,7 +7,6 @@ C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\bin\Debug\net35\T
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\bin\Debug\net35\nunit.framework.dll
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\bin\Debug\net35\WebDriver.Support.dll
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\bin\Debug\net35\WebDriver.dll
-C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.csprojAssemblyReference.cache
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.AssemblyInfoInputs.cache
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.AssemblyInfo.cs
 C:\Users\Professional\Desktop\SelWeb\TestProject1\TestProject1\obj\Debug\net35\TestProject1.csproj.CoreCompileInputs.cache
