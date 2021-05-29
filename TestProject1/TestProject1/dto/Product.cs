@@ -9,7 +9,7 @@ namespace TestProject1.dto
     {
         public Product(string productname, string category, string supplier, string unitprice, string quantity, string unitsinstock, string unitsonorder, string reorderlevel, string discontinued)
         {
-            this.Productname = productname;
+            Productname = productname;
             Category = category;
             Supplier = supplier;
             UnitPrice = unitprice;
